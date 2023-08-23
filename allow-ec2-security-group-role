@@ -3,7 +3,8 @@
         "Effect": "Allow",
         "Action": [
             "ec2:AuthorizeSecurityGroupIngress",
-            "ec2:DescribeSecurityGroups"
+            "ec2:DescribeSecurityGroups",
+            "ec2:RevokeSecurityGroupIngress"
         ],
         "Resource": [
             "*"
