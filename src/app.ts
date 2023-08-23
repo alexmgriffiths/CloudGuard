@@ -45,7 +45,7 @@ async function updateSecurityGroupRules(desiredAddresses: string[]) {
 
 async function describeSecurityGroup(client: EC2Client) {
     const describeParams: DescribeSecurityGroupsCommandInput = {
-        GroupIds: [process.env.SGID as string],
+        GroupIds: [process.env.AWS_SECURITY_GROUP_ID as string],
     };
     const describeCommand = new DescribeSecurityGroupsCommand(describeParams);
     const describeResult = await client.send(describeCommand);
