@@ -16,14 +16,16 @@ The CloudGuard Project is a tool designed to keep your AWS security group in syn
 
 1. Clone the repository and navigate to the project directory.
 
-2. Set up your AWS credentials and environment variables in the `.env` file.
+2. Create an empty security group in AWS
+
+3. Set up your AWS credentials and environment variables in the `.env` file.
     ```
     AWS_REGION=us-east-1
     AWS_ACCESS_KEY=xxxx
     AWS_SECRET_ACCESS_KEY=xxxxx
     AWS_SECURITY_GROUP_ID=xxxx
     ````
-3. Run the script using your preferred Node.js environment: `npm run start`.
+4. Run the script using your preferred Node.js environment: `npm run start`.
 
 ## Requirements
 
