@@ -2,6 +2,9 @@
 
 The CloudGuard Project is a tool designed to keep your AWS security group in sync with Cloudflare's IPv4 addresses. By ensuring that your security group only allows authorized connections, this project enhances the security of your AWS resources.
 
+![image](https://github.com/alexmgriffiths/CloudGuard/assets/67096118/8100bdd1-b417-4501-91f2-e30f1480df85)
+
+
 ## How It Works
 
 1. **Fetch Cloudflare IPv4s:** The project retrieves the latest list of Cloudflare's IPv4 addresses, ensuring your AWS environment remains up-to-date.
@@ -16,14 +19,16 @@ The CloudGuard Project is a tool designed to keep your AWS security group in syn
 
 1. Clone the repository and navigate to the project directory.
 
-2. Set up your AWS credentials and environment variables in the `.env` file.
+2. Create an empty security group in AWS
+
+3. Set up your AWS credentials and environment variables in the `.env` file.
     ```
     AWS_REGION=us-east-1
     AWS_ACCESS_KEY=xxxx
     AWS_SECRET_ACCESS_KEY=xxxxx
     AWS_SECURITY_GROUP_ID=xxxx
     ````
-3. Run the script using your preferred Node.js environment: `npm run start`.
+4. Run the script using your preferred Node.js environment: `npm run start`.
 
 ## Requirements
 
