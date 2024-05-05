@@ -2,6 +2,9 @@
 
 The CloudGuard Project is a tool designed to keep your AWS security group in sync with Cloudflare's IPv4 addresses. By ensuring that your security group only allows authorized connections, this project enhances the security of your AWS resources.
 
+![image](https://github.com/alexmgriffiths/CloudGuard/assets/67096118/8100bdd1-b417-4501-91f2-e30f1480df85)
+
+
 ## How It Works
 
 1. **Fetch Cloudflare IPv4s:** The project retrieves the latest list of Cloudflare's IPv4 addresses, ensuring your AWS environment remains up-to-date.
