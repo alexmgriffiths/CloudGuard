@@ -1,7 +1,7 @@
 import { EC2Client, DescribeSecurityGroupsCommand, DescribeSecurityGroupsCommandInput, RevokeSecurityGroupIngressCommand, RevokeSecurityGroupIngressCommandInput, AuthorizeSecurityGroupIngressCommand, AuthorizeSecurityGroupIngressCommandInput, SecurityGroup } from "@aws-sdk/client-ec2";
 import axios from 'axios';
 import { config } from 'dotenv'
-import net from 'net';
+import { isIPv6, isIPv4 } from 'net';
 config()
 
 async function main() {
@@ -60,7 +60,6 @@ function getExistingAddresses(securityGroup: any) {
     const existingAddresses: string[] = [];
     if (securityGroup.IpPermissions) {
         securityGroup.IpPermissions.forEach((permission: any) => {
-            console.log(permission)
             permission.IpRanges.forEach((ipRange: any) => {
                 existingAddresses.push(ipRange.CidrIp);
             });
@@ -77,8 +76,8 @@ async function deleteUnusedIPs(client: EC2Client, securityGroup: SecurityGroup, 
     const addressesToDelete = existingAddresses.filter((address) => !desiredAddresses.includes(address));
     for (const address of addressesToDelete) {
 
-        if(ipv6 && !net.isIPv6(address)) continue;
-        if(!ipv6 && !net.isIPv4(address)) continue;
+        if(ipv6 && !isIPv6(address)) continue;
+        if(!ipv6 && !isIPv4(address)) continue;
 
         let revokeParams: RevokeSecurityGroupIngressCommandInput;
         if(!ipv6) {

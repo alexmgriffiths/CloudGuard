@@ -4,7 +4,7 @@
   "description": "Automatically update AWS SG to populate Cloudflare IPs",
   "main": "src/app.ts",
   "scripts": {
-    "start": "npx ./src/app.ts && node src/app.js",
+    "start": "tsc ./src/app.ts && node src/app.js",
     "dev": "ts-node src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-ec2": "^3.396.0",
-    "axios": "^1.6.0"
+    "axios": "^1.6.0",
     "dotenv": "^16.4.5"
   }
 }
